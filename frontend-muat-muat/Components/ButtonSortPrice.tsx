@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-export default function ButtonSortStock() {
+export default function ButtonSortPrice() {
 
   const sort = useSelector((state: RootState) => state.sort)
   const stateSort = useSelector((state: RootState) => state.stateSrot)
@@ -21,7 +21,7 @@ export default function ButtonSortStock() {
     } else {
       state = ""
     }
-    dispatch(setSort(`${setSort}stock`))
+    dispatch(setSort(`${stateSort}price`))
     dispatch(setStateSort(state))
     navigate.replace(`/?keyword=${keyword}&sort=${sort}`)
   }

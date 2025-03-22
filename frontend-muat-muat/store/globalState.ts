@@ -5,13 +5,15 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface IStateInit {
   sort: string,
   keyword: string,
-  product: Product[]
+  product: Product[],
+  stateSrot: string
 }
 
 const initState: IStateInit = {
-  sort: "-stock",
+  sort: "price",
   keyword: "",
-  product: []
+  product: [],
+  stateSrot: "-"
 }
 
 const globalState = createSlice({
@@ -26,14 +28,18 @@ const globalState = createSlice({
     },
     setProduct(state, action: PayloadAction<Product[]>) {
       state.product = action.payload;
-    }
+    },
+    setStateSort: (state, action: PayloadAction<string>) => {
+      state.stateSrot = action.payload;
+    },
   },
 });
 
 export const {
   setSort,
   setKeyword,
-  setProduct
+  setProduct,
+  setStateSort
 } = globalState.actions; // Action
 
 export default globalState.reducer; // Reducer

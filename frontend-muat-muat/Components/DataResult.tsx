@@ -9,6 +9,7 @@ import DeleteButton from './DeleteButton'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@/store/store'
 import { setProduct } from '@/store/globalState'
+import ButtonSortPrice from './ButtonSortPrice'
 
 export default function DataResult() {
   const sort = useSelector((state: RootState) => state.sort)
@@ -40,6 +41,7 @@ export default function DataResult() {
           </th>
           <th scope="col" className="px-6 py-3">
             Price
+            <ButtonSortPrice />
           </th>
           <th scope="col" className="px-6 py-3">
             Stock
